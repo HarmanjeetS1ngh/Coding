@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-char unit1;
-char unit2;
-float temp;
-float A;
+char unit1; // Input for temperature unit
+char unit2; // Input for conversion unit
+float temp; // Take Temperature value as input
+float A;    //
 float B;
 float X;
 float D;
@@ -12,8 +12,6 @@ float Y;
 
 int main()
 {
-    
-
     printf("Choose the temperature unit in which you want to enter the temperature (F)/(C)/(K):\n");
     scanf("%c", &unit1);
 
@@ -23,11 +21,7 @@ int main()
     printf("Enter the unit in which you want to know the temperature(F)/(C)/(K):\n");
     scanf("%c", &unit2);
 
-    if (unit1 == 'C' && unit2 == 'C')
-    {
-        printf("The temperature is: %f", temp);
-    }
-    else if (unit1 == 'C' && unit2 == 'F')
+    if (unit1 == 'C' && unit2 == 'F')
     {
         A = temp * 9 / 5 + 32;
         printf("The temperature is: %f", A);
@@ -41,10 +35,6 @@ int main()
     {
         X = 32 * temp - 32 * 5 / 9;
         printf("The temperature is: %f", X);
-    }
-    else if (unit1 == 'F' && unit2 == 'F')
-    {
-        printf("The temperature is: %f", temp);
     }
     else if (unit1 == 'F' && unit2 == 'K')
     {
@@ -61,7 +51,6 @@ int main()
         Y = temp - 459.67;
         printf("The temperature is: %f", Y);
     }
-
     else
     {
         printf("the temperature is: %f", temp);
