@@ -1,28 +1,70 @@
 #include <stdio.h>
+
+char unit1;
+char unit2;
+float temp;
+float A;
+float B;
+float X;
+float D;
+float E;
+float Y;
+
 int main()
 {
-    int age;
-    printf("Enter your age\n");
-    scanf("%d", &age);
-    if (age >= 18 && age <= 122)
+    
+
+    printf("Choose the temperature unit in which you want to enter the temperature (F)/(C)/(K):\n");
+    scanf("%c", &unit1);
+
+    printf("Enter the temperature: \n");
+    scanf("%f", &temp);
+
+    printf("Enter the unit in which you want to know the temperature(F)/(C)/(K):\n");
+    scanf("%c", &unit2);
+
+    if (unit1 == 'C' && unit2 == 'C')
     {
-        printf("You can cast vote!\n");
+        printf("The temperature is: %f", temp);
     }
-    else if (age > 122)
+    else if (unit1 == 'C' && unit2 == 'F')
     {
-        printf("You are dead to me !\n");
+        A = temp * 9 / 5 + 32;
+        printf("The temperature is: %f", A);
     }
-    else if (age == 0)
+    else if (unit1 == 'C' && unit2 == 'K')
     {
-        printf("You cannot cast vote, you were just born!\n");
+        B = temp + 273;
+        printf("The temperature is: %f", B);
     }
-    else if (age < 0)
+    else if (unit1 == 'F' && unit2 == 'C')
     {
-        printf("You haven't been born yet!\n");
+        X = 32 * temp - 32 * 5 / 9;
+        printf("The temperature is: %f", X);
     }
+    else if (unit1 == 'F' && unit2 == 'F')
+    {
+        printf("The temperature is: %f", temp);
+    }
+    else if (unit1 == 'F' && unit2 == 'K')
+    {
+        D = 32 * temp - 32 * 5 / 9 + 273;
+        printf("The temperature is: %f", D);
+    }
+    else if (unit1 == 'K' && unit2 == 'C')
+    {
+        E = temp - 273;
+        printf("The temperature is: %f", E);
+    }
+    else if (unit1 == 'K' && unit2 == 'F')
+    {
+        Y = temp - 459.67;
+        printf("The temperature is: %f", Y);
+    }
+
     else
     {
-        printf("You cannot cast vote!\n");
+        printf("the temperature is: %f", temp);
     }
     return 0;
 }
