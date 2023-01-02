@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-char unit1; // Input for temperature unit
-char unit2; // Input for conversion unit
+int unit1;  // Input for temperature unit
+int unit2;  // Input for conversion unit
 float temp; // Take Temperature value as input
 float A;    //
 float B;
@@ -12,41 +12,47 @@ float Y;
 
 int main()
 {
-    printf("Choose the temperature unit in which you want to enter the temperature (F)/(C)/(K):\n");
-    scanf("%c", &unit1);
+    printf("Choose Temperature units You want to convert\n");
+    printf("1.Celsius\n");
+    printf("2.Fahrenheit\n");
+    printf("3.Kelvin\n");
+    scanf("%d", &unit1);
 
     printf("Enter the temperature: \n");
     scanf("%f", &temp);
 
-    printf("Enter the unit in which you want to know the temperature(F)/(C)/(K):\n");
-    scanf("%c", &unit2);
+    printf("Choose conversion\n");
+    printf("1.Celsius\n");
+    printf("2.Fahrenheit\n");
+    printf("3.Kelvin\n");
+    scanf("%d", &unit2);
 
-    if (unit1 == 'C' && unit2 == 'F')
+    if (unit1 == 1 && unit2 == 2)
     {
         A = temp * 9 / 5 + 32;
         printf("The temperature is: %f", A);
     }
-    else if (unit1 == 'C' && unit2 == 'K')
+    else if (unit1 == 1 && unit2 == 3)
     {
         B = temp + 273;
         printf("The temperature is: %f", B);
     }
-    else if (unit1 == 'F' && unit2 == 'C')
+    else if (unit1 == 2 && unit2 == 1)
     {
         X = 32 * temp - 32 * 5 / 9;
         printf("The temperature is: %f", X);
     }
-    else if (unit1 == 'F' && unit2 == 'K')
+    else if (unit1 == 2 && unit2 == 3)
     {
         D = 32 * temp - 32 * 5 / 9 + 273;
         printf("The temperature is: %f", D);
     }
-    else if (unit1 == 'K' && unit2 == 'C')
+    else if (unit1 == 3 && unit2 == 1)
     {
         E = temp - 273;
         printf("The temperature is: %f", E);
     }
-    else if (unit1 == 'K' && unit2 == 'F')
+    else if (unit1 == 3 && unit2 == 2)
     {
         Y = temp - 459.67;
         printf("The temperature is: %f", Y);
